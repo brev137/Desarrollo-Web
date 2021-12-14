@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+}
+header {
+    height: 140px;
+    background-color: #f2f2f2;
+    grid-area: encabezado;
+}
+/* Se incluye gradientes en Nav y Main */
+nav {
+    background-color: #2d2f38;
+    background-image: linear-gradient(to left,#92c800, #2d2f38 80%);
+    grid-area: menu;
+    height: 80px;
+
+}
+main {
+    text-align: center;
+    background-image: radial-gradient(#f2f2f2 50%, #dbff00 200%);
+    height: 110vh;
+}
+article {
+    margin: 3vh;
+}
+footer {
+    background-color: #141519;
+    grid-area: pie;
+    color: #f2f2f2;
+    text-align: center;
+}
+li {
+    list-style-type: none;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5vh;
+    color: #92c800;
+    font-size: 50px;
+}
+h2, h3 {
+    text-align: center;
+    padding: 2vh;
+    color: #141519;
+}
+.menuFlex a {
+    color: #dbff00;
+    margin: 1.5vh;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.menuFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.headerFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.productosFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#productos {
+    grid-area: productos;
+}
+#cross-sell {
+    grid-area: ventaCruzada;
+}
+
+/* Nombres de áreas: encabezado, menu, productos, ventaCruzada, pie */
+
+@media (max-width: 1023px){
+    body {
+        font-size: 0.75rem;
+    }
+    header {
+        height: 5vh;
+    }
+    nav {
+        height: 5vh;
+    }
+    .grid-areas {
+        display: grid;
+        grid-template-areas: 
+        "encabezado"
+        "menu"
+        "productos"
+        "ventaCruzada"
+        "pie";
+        grid-template-columns: 100%;
+        grid-template-rows: 0.5fr 0.5fr 2fr 1fr 0.5fr;
+        grid-row-gap: 2px;
+    }
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #92c800;
+        font-size: 25px;
+        padding: 3%;
+    }
+}
+
+@media (min-width: 1024px){
+    body {
+        font-size: 1.2rem;
+    }
+    .grid-areas {
+        display: grid;
+        grid-template-areas: 
+        "encabezado"
+        "menu"
+        "productos"
+        "ventaCruzada"
+        "pie";
+        grid-template-columns: 100%;
+        grid-template-rows: 2fr 0.5fr 2fr 1fr 0.5fr;
+        grid-row-gap: 2px;
+    }
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #92c800;
+        font-size: 50px;
+    }
+    .menuFlex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    /* Transicion de Nombre */
+    h1 {
+        animation-duration: 4s;
+        animation-name: aparecer;
+     }
+     
+     @keyframes aparecer {
+        from {
+          opacity: 0;
+          transform: translate(-200px);
+        }
+        to {
+          opacity: 1;
+        }
+     }
+     .transicion a {
+         transition: all 1s;
+     }
+     .transicion a:hover {
+        font-size: 120%;
+        color: #f2f2f2;
+     }
+}
